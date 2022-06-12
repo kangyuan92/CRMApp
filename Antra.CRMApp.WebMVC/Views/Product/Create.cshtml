@@ -72,7 +72,11 @@
         <div class="col">
             <div class="mb-4">
                 <label asp-for="Discontinued"></label>
-                <input asp-for="Discontinued" type="checkbox"/>
+                @*<input asp-for="Discontinued" type="checkbox"/>*@
+                <select asp-for="Discontinued" class="form-control"/>
+                    <option [ngValue]="true">Discontinued</option>      
+                    <option [ngValue]="false">Not Discontinued</option>
+                </select>
                 <span asp-validation-for="Discontinued" class="text-danger"></span>
             </div>
         </div>
