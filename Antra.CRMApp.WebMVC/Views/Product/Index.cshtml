@@ -1,0 +1,55 @@
+﻿<!--index.cshtml is a razor view...
+    razor is a viewengine, it will convert the C# code to 
+    the script code which a browser can understand
+-->
+@model IEnumerable<ProductResponseModel>
+<a asp-action="Create" asp-controller="Product" class="btn bg-success" >Add Product</a>
+@*<h1>Product index</h1>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>SupplierId</th>
+            <th>CategoryId</th>
+            <th>QuantityPerUnit</th>
+            <th>UnitPrice</th>
+            <th>UnitsInStock</th>
+            <th>UnitsOnOrder</th>
+            <th>ReorderLevel</th>
+            <th>Discontinued</th>
+            <th>VendorId</th>
+            <th>Option</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach(var p in Model)
+            {
+               <tr>
+               <td>@p.Id</td>
+               <td>@p.Name</td>
+               <td>@p.SupplierId</td>
+               <td>@p.CategoryId</td>
+               <td>@p.QuantityPerUnit</td>
+               <td>@p.UnitPrice</td>
+               <td>@p.UnitsInStock</td>
+               <td>@p.UnitsOnOrder</td>
+               <td>@p.ReorderLevel</td>
+               <td>@p.Discontinued</td>
+               <td>@p.VendorId</td>
+               <td>
+               <span>
+               <a asp-controller="Product" asp-action="Edit" asp-route-id="@p.Id" >Edit</a>
+               </span>
+               <span>
+               <a asp-controller="Product" asp-action="Delete" asp-route-id="@p.Id" >Edit</a>
+               </span>
+               </td>
+               </tr> 
+
+            }
+        }
+    </tbody>
+</table>
+

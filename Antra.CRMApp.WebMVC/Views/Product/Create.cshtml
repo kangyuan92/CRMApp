@@ -1,0 +1,113 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ProductRequestModel
+<form asp-controller="Product" asp-action="Create" method="post" >
+    <h1 class="display-6">Create Product</h1>
+    <hr/>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="mb-4">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mb-4">
+                <label asp-for="SupplierId"></label>
+                <input asp-for="SupplierId" class="form-control"/>
+                <span asp-validation-for="SupplierId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col">
+             <div class="mb-4">
+                <label asp-for="CategoryId"></label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.Categories" >
+                <option value="">Select a region</option>   
+                </select>
+                <span asp-validation-for="CategoryId"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="mb-4">
+                <label asp-for="QuantityPerUnit"></label>
+                <input asp-for="QuantityPerUnit" class="form-control"/>
+                <span asp-validation-for="QuantityPerUnit" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mb-4">
+                <label asp-for="UnitPrice"></label>
+                <input asp-for="UnitPrice" class="form-control"/>
+                <span asp-validation-for="UnitPrice" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mb-4">
+                <label asp-for="UnitsInStock"></label>
+                <input asp-for="UnitsInStock" class="form-control"/>
+                <span asp-validation-for="UnitsInStock" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="mb-4">
+                <label asp-for="UnitsOnOrder"></label>
+                <input asp-for="UnitsOnOrder" class="form-control"/>
+                <span asp-validation-for="UnitsOnOrder" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mb-4">
+                <label asp-for="ReorderLevel"></label>
+                <input asp-for="ReorderLevel" class="form-control"/>
+                <span asp-validation-for="ReorderLevel" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mb-4">
+                <label asp-for="Discontinued"></label>
+                <input asp-for="Discontinued" type="checkbox"/>
+                <span asp-validation-for="Discontinued" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="mb-4">
+                <label asp-for="UnitsOnOrder"></label>
+                <input asp-for="UnitsOnOrder" class="form-control"/>
+                <span asp-validation-for="UnitsOnOrder" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mb-4">
+                <label asp-for="ReorderLevel"></label>
+                <input asp-for="ReorderLevel" class="form-control"/>
+                <span asp-validation-for="ReorderLevel" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col">
+             <div class="mb-4">
+                <label asp-for="VendorId"></label>
+                <select asp-for="VendorId" class="form-control" asp-items="ViewBag.Vendors" >
+                <option value="">Select a region</option>   
+                </select>
+                <span asp-validation-for="VendorId"></span>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="row">
+        <div class="col">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+</form>

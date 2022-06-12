@@ -1,0 +1,28 @@
+﻿@model IEnumerable<RegionModel>
+<a asp-action="Create" asp-controller="Region" class="btn bg-success" >Add Region</a>
+<table class="table table-striped">
+  <thead>
+      <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Option</th>
+      </tr>
+  </thead>
+  <tbody>
+      @foreach(var m in Model)
+        {
+            <tr>
+                <td>@m.Id</td>
+                <td>@m.Name</td>
+                <td>
+               <span>
+               <a asp-controller="Region" asp-action="Edit" asp-route-id="@m.Id" >Edit</a>
+               </span>
+               <span>
+               <a asp-controller="Region" asp-action="Delete" asp-route-id="@m.Id" >Delete</a>
+               </span>
+               </td>
+            </tr>
+        }
+    </tbody>
+</table>
